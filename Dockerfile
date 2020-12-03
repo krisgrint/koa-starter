@@ -6,4 +6,4 @@ USER node
 RUN npm ci
 ENV PORT=4002
 ENV NODE_ENV=production
-CMD [ "node", "./src/index.js" ]
+CMD [ "node", "./index.js" ]
