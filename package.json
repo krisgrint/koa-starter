@@ -32,7 +32,7 @@
     "koa-helmet": "^6.0.0"
   },
   "devDependencies": {
-    "eslint": "^7.14.0",
+    "eslint": "^7.15.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^6.15.0",
     "eslint-plugin-import": "^2.22.1",
@@ -50,6 +50,9 @@
     }
   },
   "lint-staged": {
-    "*.js": "eslint --cache --fix"
+    "*.js": [
+      "eslint --cache --fix",
+      "jest --bail --findRelatedTests"
+    ]
   }
 }

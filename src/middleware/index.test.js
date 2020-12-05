@@ -1,6 +1,6 @@
 const compose = require("koa-compose");
 const errorHandler = require("./error-handler");
-const { requestLogger } = require("./logger");
+const { requestLogger, requestTimer } = require("./logger");
 
 jest.mock("koa-compose");
 jest.mock("koa-helmet", () => () => "koa-helmet");
@@ -18,11 +18,12 @@ describe("middleware", () => {
     middleware();
 
     expect(compose).toHaveBeenCalledWith([
+      requestLogger,
+      requestTimer,
       errorHandler,
       "koa-helmet",
       "@koa/cors",
       "koa-bodyparser",
-      requestLogger,
     ]);
   });
 });
