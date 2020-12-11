@@ -1,6 +1,6 @@
 {
   "name": "koa-starter",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Starter project for Koa application",
   "scripts": {
     "start": "NODE_ENV=development PORT=3001 nodemon ./src/index.js",
