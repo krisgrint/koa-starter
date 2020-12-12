@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+        "rootDir": "./src",
+        "outDir": "./dist",
+        "noImplicitAny": true,
+        "noImplicitReturns": true
+    },
+    "include": ["./src/**/*"],
+    "exclude": ["./src/**/*.spec.js", "node_modules"],
+    "extends": "@tsconfig/node14/tsconfig.json"
+}

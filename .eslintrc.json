@@ -1,32 +1,20 @@
 {
   "env": {
-    "commonjs": true,
-    "es6": true,
+    "es2020": true,
     "node": true
   },
-  "extends": ["airbnb-base", "prettier"],
-  "globals": {
-    "Atomics": "readonly",
-    "SharedArrayBuffer": "readonly"
-  },
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "prettier/@typescript-eslint",
+    "plugin:prettier/recommended",
+    "plugin:jest/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript"
+  ],
   "parserOptions": {
-    "ecmaVersion": 2018
+    "ecmaVersion": 6,
+    "sourceType": "module"
   },
-  "plugins": ["prettier"],
-  "rules": {
-    "prettier/prettier": "error"
-  },
-  "overrides": [
-    {
-      "files": ["*.test.js", "*.spec.js"],
-      "env": {
-        "jest": true
-      },
-      "rules": {
-        "no-unused-expressions": "off",
-        "func-names": "off",
-        "global-require": "off"
-      }
-    }
-  ]
+  "plugins": ["@typescript-eslint"]
 }

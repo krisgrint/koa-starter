@@ -1,6 +1,7 @@
 module.exports = {
   testEnvironment: "node",
   testPathIgnorePatterns: ["test/integration"],
+  preset: "ts-jest",
   coverageThreshold: {
     global: {
       branches: 80,
