@@ -1,6 +1,6 @@
 import { Context } from "koa";
 import { createMockContext } from "@shopify/jest-koa-mocks";
-import { requestLogger, requestTimer } from "./logger";
+import { requestLogger, requestTimer } from "./request-logger";
 
 describe("logger", () => {
   const OLD_ENV = process.env;
