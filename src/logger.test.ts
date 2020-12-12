@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import chalk from "chalk";
 import Logger from "./logger";
 
@@ -8,13 +7,12 @@ jest.mock("chalk", () => ({
 }));
 
 describe("logger", () => {
-  const consoleSpy: any = {
-    log: jest.fn(),
-  };
+  jest.spyOn(console, "log");
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   let logger: any;
 
   beforeEach(() => {
-    logger = Logger(consoleSpy);
+    logger = Logger(console);
   });
 
   it("exports a function", () => {
@@ -24,7 +22,7 @@ describe("logger", () => {
   it("calls chalk with a default color", () => {
     logger("default message");
 
-    expect(consoleSpy.log).toHaveBeenCalled();
+    expect(console.log).toHaveBeenCalled();
     expect(chalk.keyword).toHaveBeenCalledWith("white");
     expect(chalkSpy).toHaveBeenCalledWith("default message");
   });
