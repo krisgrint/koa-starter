@@ -3,7 +3,8 @@
   "version": "1.0.4",
   "description": "Starter project for Koa application",
   "scripts": {
-    "start": "NODE_ENV=development PORT=3001 nodemon ./src/index.js",
+    "start": "NODE_ENV=development PORT=3001 nodemon",
+    "build": "rm -rf ./dist && tsc -b",
     "test:unit": "jest",
     "test:unit:watch": "jest --watchAll",
     "test:coverage": "jest --coverage",

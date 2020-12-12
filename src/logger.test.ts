@@ -30,7 +30,7 @@ describe("logger", () => {
   it("calls chalk with a defined color", () => {
     logger("blue message", "blue");
 
-    expect(consoleSpy.log).toHaveBeenCalled();
+    expect(console.log).toHaveBeenCalled();
     expect(chalk.keyword).toHaveBeenCalledWith("blue");
     expect(chalkSpy).toHaveBeenCalledWith("blue message");
   });
