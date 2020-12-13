@@ -1,6 +1,6 @@
 import http from "http";
-import app from "./src/app";
-import logger from "./src/logger";
+import app from "./app";
+import logger from "./logger";
 import { AddressInfo } from "net";
 
 const server = http.createServer(app.callback()).listen(process.env.PORT || 0);

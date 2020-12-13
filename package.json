@@ -2,6 +2,7 @@
   "name": "koa-starter",
   "version": "2.0.0",
   "description": "Starter project for Koa application",
+  "main": "./dist/index.js",
   "scripts": {
     "start": "NODE_ENV=development PORT=3001 nodemon",
     "build": "rm -rf ./dist && tsc -b",
