@@ -1,6 +1,6 @@
 {
   "name": "koa-starter",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Starter project for Koa application",
   "main": "./dist/index.js",
   "scripts": {
