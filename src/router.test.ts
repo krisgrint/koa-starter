@@ -1,15 +1,10 @@
-const Router = require("@koa/router");
-const { heartbeat } = require("./handlers");
+import Router from "@koa/router";
+import { heartbeat } from "./handlers";
+import router from "./router";
 
 jest.mock("@koa/router");
 
 describe("router", () => {
-  let router;
-
-  beforeEach(() => {
-    router = require("./router");
-  });
-
   it("exports a router", () => {
     expect(router).toBeInstanceOf(Router);
   });
