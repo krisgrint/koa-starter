@@ -38,6 +38,17 @@ describe("logger", () => {
       );
     });
 
+    it("removes query parameters from URL", async () => {
+      process.env.NODE_ENV = "development";
+      ctx.status = 200;
+      ctx.url = "/test?secret_token=aaabbbccc";
+
+      await requestLogger(ctx, next);
+      expect(
+        ctx.logger.mock.calls[0][0].includes("secret_token=aaabbbccc")
+      ).toBe(false);
+    });
+
     it("does not log whilst in any other environment", async () => {
       await requestLogger(ctx, next);
 

@@ -1,10 +1,13 @@
 import { Context, Next } from "koa";
 
+const cleanUrl = (url: string) => url.split("?")[0];
+
 const requestLogger = async (ctx: Context, next: Next): Promise<void> => {
   await next();
   if (process.env.NODE_ENV === "development") {
     const rt = ctx.response.get("X-Response-Time");
-    ctx.logger(`${ctx.method}: ${ctx.status} ${ctx.url} ${rt}`, "blue");
+    const url = cleanUrl(ctx.url);
+    ctx.logger(`${ctx.method}: ${ctx.status} ${url} ${rt}`, "blue");
   }
 };
 
